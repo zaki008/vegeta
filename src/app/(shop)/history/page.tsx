@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
 import Image from "next/legacy/image";
 import Link from "next/link";
+import { useState } from "react";
 
 // components
-import { ProductShowcase } from "@/components/product/product-showcase";
+import CommonPagination from "@/components/common/common-pagination";
+import ProductHistory from "@/components/product-history/product-history";
 import { ProductDetails } from "@/components/product/product-card";
+import { ProductShowcase } from "@/components/product/product-showcase";
 import {
   Select,
   SelectContent,
@@ -14,8 +16,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import ProductHistory from "@/components/product-history/product-history";
-import CommonPagination from "@/components/common/common-pagination";
 
 // utils
 import { hover } from "@/lib/hover";

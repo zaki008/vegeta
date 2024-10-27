@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button";
 import SignUpForm from "./sign-up-form";
 
 // assets
-import LogoGoogle from "@/assets/images/logo-google.png";
 import LogoFacebook from "@/assets/images/logo-facebook.png";
+import LogoGoogle from "@/assets/images/logo-google.png";
 
 // utils
-import { cn } from "@/lib/utils";
 import { hover } from "@/lib/hover";
+import { cn } from "@/lib/utils";
 
 export default function SignUp() {
   return (
