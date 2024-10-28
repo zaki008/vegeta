@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/legacy/image";
 import Link from "next/link";
 
@@ -7,11 +8,15 @@ import { ProductShowcase } from "@/components/product/product-showcase";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 // assets
-import ProductCategoryJSON from "@/assets/json/product-category.json";
-import ProductsJSON from "@/assets/json/products.json";
 import ImageBanner from "@/assets/images/image-banner.png";
+import ProductCategoryJSON from "@/assets/json/product-category.json";
+
+//services
+import { useGetAllProductsQuery } from "@/services/products";
 
 export default function Home() {
+  const { data, isLoading } = useGetAllProductsQuery({});
+
   return (
     <main className="flex flex-col w-full min-h-screen items-center pb-8">
       <div className="w-content">
@@ -35,7 +40,11 @@ export default function Home() {
               Lihat Selengkapnya {">"}
             </Link>
           </div>
-          <ProductShowcase gridConfig={"grid-cols-4"} products={ProductsJSON} />
+          <ProductShowcase
+            gridConfig={"grid-cols-4"}
+            products={data?.data?.slice(0, 4) || []}
+            isLoading={isLoading}
+          />
         </div>
 
         <div className="mt-8">
